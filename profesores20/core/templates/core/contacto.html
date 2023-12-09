@@ -1,0 +1,61 @@
+{% extends "core/base.html" %}
+{% block title %} - Contacto{% endblock %}
+{% block content %}
+
+    <main>
+        <div class="content-central">
+            
+              <form name="formulario" id="formulario">
+                  <div class="mb-3">
+                      <label for="txtNombre" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="txtNombre" placeholder="ingrese su nombre">
+                  </div>
+                  <div class="mb-3">
+                      <label for="txtTelefono" class="form-label">Telefono</label>
+                      <input type="number" class="form-control" id="txtTelefono" placeholder="ingrese su telefono">
+                  </div>                
+                  <div class="mb-3">
+                    <label for="txtEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="txtEmail" placeholder="ingrese su email">
+                  </div>
+                  <button type="submit" id="submit" class="btn btn-primary" >Enviar</button>
+                </form>
+      </main>
+  
+  <script>
+      const regex = /^[a-zA-Z]+$/; 
+  
+      $('#submit').on('click', function(e) {
+          var checkFormulario = document.getElementById('formulario').checkValidity();
+          
+          if (checkFormulario) {
+  
+              if (document.getElementById("txtNombre").value == "" ){
+                      alert("Ingrese su nombre");
+                      return false;
+              }
+              else{
+                  if (!regex.test(document.getElementById("txtNombre").value)) {
+                      alert("Nombre invalido");
+                      return false;
+                  }
+              }
+  
+              if (document.getElementById("txtTelefono").value == "" ){
+                      alert("Ingrese su numero de telefono");
+                      return false;
+              }
+  
+              if (document.getElementById("txtEmail").value == "" ){
+                      alert("Ingrese su email");
+                      return false;
+              }
+  
+              alert("Envia formulario !!!");
+          } 
+      });
+  </script>    
+
+{% endblock %}
+
+    

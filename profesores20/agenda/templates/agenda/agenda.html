@@ -1,0 +1,43 @@
+{% extends "core/base.html" %}
+{% block title %} - Agenda{% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="content-central">
+            <div class="content-left">
+                <span>MI AGENDA</span> <br>
+                <div style="flex: 1;">
+                <table class="table table-striped table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Materia</th>
+                        <th scope="col">Fecha Agendada</th>
+                        <th scope="col">Hora Agendada</th>
+                        <th scope="col">Cantidad Horas</th>
+                      </tr>
+                    </thead>
+                    {% for agenda in agendas %} 
+                    <tbody>
+                      <tr>
+                        <td>{{agenda.alumnoApellido}}</td>
+                        <td>{{agenda.alumnoNombre}}</td>
+                        <td>{{agenda.materia}}</td>
+                        <td>{{agenda.fechaAgendada}}</td>
+                        <td>{{agenda.HoraAgendada}}</td>
+                        <td>{{agenda.cantidadHoras}}</td>                
+
+
+                    </tr>
+                    </tbody>
+                    {% endfor %}
+                  </table>
+            </div>   
+            </div>
+    </div>
+</main>
+{% endblock %}
+</body>
+</html>

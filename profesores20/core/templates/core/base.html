@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesores 2.0 {% block title %} {% endblock %}</title>
+
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</head>
+{% comment %} MENU DE NAVEGACION {% endcomment %} 
+
+<header>
+    <div class="header_texto_logo">profesores 2.0</div>
+    <nav>
+        <ul class="menu">
+            {% if ruta == '/home' or ruta == '/' %}<li><span>INICIO</span></li>{% else %}<li><a href="{% url 'home' %}">INICIO</a></li>{% endif %}
+            {% if ruta == '/experiencia' %}<li><span>EXPERIENCIA</span></li>{% else %}<li><a href="{% url 'experiencia' %}">EXPERIENCIA</a></li>{% endif %}    
+            {% if ruta == '/clases' %}<li><span>CLASES</span></li>{% else %}<li><a href="{% url 'clases' %}">CLASES</a></li>{% endif %}    
+            {% if ruta == '/agenda' %}<li><span>AGENDA</span></li>{% else %}<li><a href="{% url 'agenda' %}">AGENDA</a></li>{% endif %}    
+            {% if ruta == '/contacto' %}<li><span>CONTACTO</span></li>{% else %}<li><a href="{% url 'contacto' %}">CONTACTO</a></li>{% endif %}                
+        </ul>
+    </nav>
+</header>
+{% block content %}
+{% endblock %}
+<footer>
+    <div class="footer-left">
+        <ul class="social-icons">
+            <li><a href="mailto:mail@mail.com"><i class="fa-regular fa-envelope"></i></a></li>
+            <li><a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-right">
+        <ul class="social-icons">
+            <li><i class="fa-solid fa-square-phone"></i> (+54) 1111-1111</li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
